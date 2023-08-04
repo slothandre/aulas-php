@@ -17,7 +17,6 @@
     <?php
         $nota1 = 6;
         $nota2 = 7;
-        
 
         function calculaMedia(float $nota1, $nota2):float {
             $media = ($nota1 + $nota2) / 2;
@@ -49,18 +48,17 @@
             $alunos = ["Motocó", "Tiulielson", "Kinder Bueno", "Pelipe", "Leandro do Arrocha"];
             $notas = [
                 [8, 9],
-                [7, 10],
+                [7, 9],
                 [1, 6],
                 [6, 7],
                 [7, 7]
             ];
 
             for ($i = 0; $i < 5; $i++) { 
-                for ($j = 0; $j < 2; $j++) {
-                    $notaLoop0 = $notas[$j];
-                }
+                $nota1 = $notas[$i][0];
+                $nota2 = $notas[$i][1];
             ?>
-                <li><?=$alunos[$i]?>, <?=calculaMedia(8, 7)?>, <?=situacao(calculaMedia(8, 7))?></li>
+                <li><?=$alunos[$i]?>, <?=calculaMedia($nota1, $nota2)?>, <?=situacao(calculaMedia($nota1, $nota2))?></li>
             <?php
             }
         ?>
