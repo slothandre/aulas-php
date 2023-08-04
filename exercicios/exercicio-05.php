@@ -18,14 +18,12 @@
 </head>
 <body>
     <?php
-        $nota1 = 8;
-        $nota2 = 9;
         function calculaMedia(float $nota1, $nota2):float {
             $media = ($nota1 + $nota2) / 2;
             return $media;
         }
         
-        $mediaFinal = calculaMedia($nota1, $nota2);
+        $media = calculaMedia(8, 9);
 
         function situacao(float $media):string {
             if ($media >= 7) {
@@ -36,12 +34,13 @@
             return $resultado;
         };
 
+        $situacao = situacao($media);
 
 
     ?>
 
     <h1>Médias dos patetas</h1>
-    <p>O aluno fulanito teve média <?=calculaMedia($nota1, $nota2)?>, então ele foi <?=situacao($mediaFinal)?></p>
+    <p>O aluno fulanito teve média <?=$media?>, então ele foi <?=$situacao?></p>
 
     <hr>
 
