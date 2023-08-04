@@ -40,6 +40,8 @@
     ?>
     <pre><?=var_dump($linguagens)?></pre>
     <pre><?=var_dump($arrayLinguagens)?></pre>
+    
+    <hr>
 
     <h2>Numéricas</h2>
     <h3>min, max</h3>
@@ -51,7 +53,17 @@
     <p>Maior valor: <?=max($valores)?></p>
     <p>Arredondamento: <?=round($valorQualquer)?></p>
 
+    <hr>
+
     <h2>Arrays</h2>
+    <h3>implode()</h3>
+    <?php
+        /* Função que transforma array em string */
+        $bandas = ["Rush", "Slayer", "Dio"];
+        $textoBandas = implode(" - ", $bandas);
+    ?>
+    <pre><?=var_dump($bandas)?></pre>
+    <pre><?=var_dump($textoBandas)?></pre>
 
     <h2>Filtros</h2>
 
