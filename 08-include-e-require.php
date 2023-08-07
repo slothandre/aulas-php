@@ -1,6 +1,16 @@
 <?php
     /* Fazendo a inclusão de um arquivo de recursos */
-    include "recursos.php";
+    require "recursos.php";
+
+    /* include OU require
+    A diferença entre eles é na forma como lidam no
+    caso de acontecer algum erro na inclusão.
+    
+    Erros de carregamento com include, dão alertas (warnings)
+    mas NÃO PARAM completamente a aplicação
+    
+    Erros de carregamento com require, dão erro fatal (fatal
+    error), e PARAM completamente a aplicação. */
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,5 +39,12 @@
     </ul>
 
     <p>O aluno Fulano tem 20 anos e é <?=verificaIdade(20)?> de idade.</p>
+
+    <hr>
+
+    <article>
+        <h2>Título qualquer...</h2>
+        <?php include "textos.php"; ?>
+    </article>
 </body>
 </html>
