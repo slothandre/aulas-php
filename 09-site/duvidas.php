@@ -1,4 +1,7 @@
-<?php require "includes/header.php" ?>
+<?php
+    $pagina = "Dúvidas";
+    require "includes/header.php";
+?>
     <h2>Página de dúvidas</h2>
     <h3>Principais dúvidas</h3>
     <details>
