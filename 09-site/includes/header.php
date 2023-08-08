@@ -2,11 +2,11 @@
     // Recuperar/descobrir qual o nome da página aberta no momento
     $page = basename($_SERVER['PHP_SELF']);
 
-    switch($page) {
-        case "index.php": $titulo = "Página inicial"; break;
-        case "cursos.php": $titulo = "Cursos"; break;
-        case "duvidas.php": $titulo = "Dúvidas"; break;
-        default: $titulo = "Contato"; break;
+    $titulo = match($pagina) {
+        "index.php" => "Página inicial",
+        "cursos.php" => "Cursos",
+        "duvidas.php" => "Dúvidas",
+        default => "Contato"
     }
 ?>
 <!DOCTYPE html>
