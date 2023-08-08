@@ -20,6 +20,8 @@
         } else {
             $nome = $_POST["nome"];
             $email = $_POST["email"];
+            $idade = $_POST["idade"];
+            $interesses = $_POST["interesses"];
             $mensagem = $_POST["mensagem"];
         ?>
 
@@ -27,6 +29,14 @@
             <ul>
                 <li>Nome: <?=$nome?></li>
                 <li>E-mail: <?=$email?></li>
+                <li>Idade: <?=$idade?></li>
+
+                <?php
+                    $quantidade = count($interesses);
+
+                    if($quantidade == 0) { $interesses = []; }
+                ?>
+                <li>Interesses: <?=implode(", ", $interesses)?></li>
 
                 <!-- Se a variável mensagem NÃO ESTIVER VAZIA,
                 mostre o <li> com a mensagem -->
