@@ -21,8 +21,19 @@
             $nome = $_POST["nome"];
             $email = $_POST["email"];
             $idade = $_POST["idade"];
-            $interesses = $_POST["interesses"];
             $mensagem = $_POST["mensagem"];
+
+            /* Se houver interesses (ou seja, foi selecionado
+            pelo menos 1), guarde na variável o $_POST["interesses"].
+            Caso contrário, guarde na variável um array vazio. */
+
+            // Solução com isset
+            
+            // $interesses = isset($_POST["interesses"]) ? $_POST["interesses"] : [];
+
+            /* Solução com Operador de coalescência: ?? 
+            (disponível a partir da versão 7 do PHP */
+            $interesses = $_POST["interesses"] ?? [];
         ?>
 
             <h2>Dados:</h2>
@@ -30,12 +41,6 @@
                 <li>Nome: <?=$nome?></li>
                 <li>E-mail: <?=$email?></li>
                 <li>Idade: <?=$idade?></li>
-
-                <?php
-                    $quantidade = count($interesses);
-
-                    if($quantidade == 0) { $interesses = []; }
-                ?>
                 <li>Interesses: <?=implode(", ", $interesses)?></li>
 
                 <!-- Se a variável mensagem NÃO ESTIVER VAZIA,
