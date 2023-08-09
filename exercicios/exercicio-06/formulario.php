@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício Formulário</title>
+    <title>Cadastro de Produtos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,7 +14,7 @@
     <main>
         <form action="processamento-form.php" method="post">
             <div class="form-floating">
-                <input required class="form-control" type="text" name="name" id="name">
+                <input class="form-control" type="text" name="name" id="name">
                 <label class="form-label" for="name">Nome</label>
             </div>
             <div>
@@ -30,7 +30,7 @@
                 </select>
             </div>
             <div class="form-floating">
-                <input required class="form-control" type="number" name="price" id="price" min="100" max="10000" step=".01">
+                <input class="form-control" type="number" name="price" id="price" min="100" max="10000" step=".01">
                 <label for="price">Preço</label>
             </div>
             <div>Disponibilidade
