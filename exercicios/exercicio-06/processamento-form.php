@@ -11,6 +11,7 @@
         <h1 class="display-1 text-center">Visualização de Produtos</h1>
     </header>
     <main>
+        <!-- A formatação está legal, mas faltou um pouco espaçamento nas extremidades. -->
         <section class="container">
             <?php
                 if(empty($_POST["nome"]) || empty($_POST["preco"])) { ?>
@@ -28,7 +29,12 @@
                 } else {
                     $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
                     $fabricantes = filter_input(INPUT_POST, "fabricantes", FILTER_SANITIZE_SPECIAL_CHARS);
+                    
+                    /* Aqui no $preco, o ideal é sanitizar em vez de validar.
+                    Você deverá usar dois filtros: um para sanitização de float e outro para permitir dígitos/casas
+                    decimais. */
                     $preco = filter_input(INPUT_POST, "preco", FILTER_VALIDATE_FLOAT);
+                    
                     $disponibilidade = filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
                     $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
                 ?>
