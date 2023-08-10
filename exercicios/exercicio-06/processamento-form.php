@@ -19,6 +19,12 @@
                         <p class="card-text">É <b>obrigatorio</b> preencher <b>NOME</b> e <b>PREÇO</b>!!!</p>
                     </article>
                 <?php
+                } else if($_POST["preco"] < 100 || $_POST["preco"] >= 10000) { ?>
+                    <article class="text-center">
+                        <h2 class="card-title alert alert-danger">Falha grave!!</h2>
+                        <p class="card-text">Só aceitamos valores entre <b>100</b> e <b>10.000</b>.</p>
+                    </article>
+                <?php
                 } else {
                     $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
                     $fabricantes = filter_input(INPUT_POST, "fabricantes", FILTER_SANITIZE_SPECIAL_CHARS);
