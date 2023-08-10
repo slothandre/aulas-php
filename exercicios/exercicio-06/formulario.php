@@ -12,14 +12,15 @@
         <h1 class="display-1 text-center">Cadastro de Produtos</h1>
     </header>
     <main>
-        <form class="container" action="processamento-form.php" method="post">
+        <form class="container p-4" action="processamento-form.php" method="post">
             <div class="form-floating">
                 <input class="form-control" type="text" name="nome" id="nome" required>
                 <label class="form-label" for="nome">Nome do produto</label>
             </div>
             <div>
+                <label for="form-label">Fabricantes</label>
                 <select class="form-select" name="fabricantes" id="fabricantes">
-                    <option selected disabled>Fabricantes</option>
+                    <option selected></option>
                     <?php
                         $fabricantes = ["Ink Wizards", "Vale a Penha", "PsiDevs", "SalvaPets"];
                         foreach($fabricantes as $fabricante) { ?>

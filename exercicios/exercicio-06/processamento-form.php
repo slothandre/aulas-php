@@ -29,6 +29,7 @@
                     $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
                     $fabricantes = filter_input(INPUT_POST, "fabricantes", FILTER_SANITIZE_SPECIAL_CHARS);
                     $preco = filter_input(INPUT_POST, "preco", FILTER_VALIDATE_FLOAT);
+                    $precoValidado = filter_var($preco, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                     $disponibilidade = filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
                     $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
                 ?>
@@ -38,7 +39,7 @@
                             if(!empty($fabricantes)) { ?>
                                 <li class="list-group-item"><b>Fabricante</b>: <span class="badge bg-info text-dark"><?=$fabricantes?></span></li>
                         <?php } ?>
-                        <li class="list-group-item"><b>Preço</b>: <span class="badge bg-info text-dark">R$<?=number_format($preco, 2, ",", ".")?></span></li>
+                        <li class="list-group-item"><b>Preço</b>: <span class="badge bg-info text-dark">R$<?=number_format($precoValidado, 2, ",", ".")?></span></li>
                         <?php
                             if(!empty($disponibilidade)) { ?>
                                 <li class="list-group-item"><b>Disponibilidade</b>: <span class="badge bg-info text-dark"><?=$disponibilidade?></span></li>
