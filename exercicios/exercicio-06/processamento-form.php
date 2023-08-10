@@ -14,14 +14,10 @@
         <section class="container">
             <?php
                 if(empty($_POST["nome"]) || empty($_POST["preco"])) { ?>
-                    <div class="card text-center border-danger">
-                        <div class="card-header">
-                            <h2 class="card-title">Falha grave!!</h2>
-                        </div>
-                        <div class="card-body text-danger">
-                            <p class="card-text">É <b>obrigatorio</b> preencher <b>NOME</b> e <b>PREÇO</b>!!!</p>
-                        </div>
-                    </div>
+                    <article class="text-center">
+                        <h2 class="card-title alert alert-danger">Falha grave!!</h2>
+                        <p class="card-text">É <b>obrigatorio</b> preencher <b>NOME</b> e <b>PREÇO</b>!!!</p>
+                    </article>
                 <?php
                 } else {
                     $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);

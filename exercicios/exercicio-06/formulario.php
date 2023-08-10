@@ -14,7 +14,7 @@
     <main>
         <form class="container" action="processamento-form.php" method="post">
             <div class="form-floating">
-                <input class="form-control" type="text" name="nome" id="nome">
+                <input class="form-control" type="text" name="nome" id="nome" required>
                 <label class="form-label" for="nome">Nome do produto</label>
             </div>
             <div>
@@ -30,8 +30,8 @@
                 </select>
             </div>
             <div class="form-floating">
-                <input class="form-control" type="number" name="preco" id="price" min="100" max="10000" step=".01">
-                <label for="price">Preço</label>
+                <input class="form-control" type="number" name="preco" id="preco" min="100" max="10000" step=".01" required>
+                <label for="preco">Preço</label>
             </div>
             <div>Disponibilidade
                 <div class="form-check">
