@@ -19,6 +19,9 @@
             </div>
             <div>
                 <select class="form-select" name="fabricantes" id="fabricantes">
+                    <!-- Em vez de deixar o option preenchido e desabilitado,
+                    deixe apenas o option vazio. Isso dará a entender ao usuário
+                    que ele deve escolher uma opção -->
                     <option selected disabled>Fabricantes</option>
                     <?php
                         $fabricantes = ["Ink Wizards", "Vale a Penha", "PsiDevs", "SalvaPets"];
