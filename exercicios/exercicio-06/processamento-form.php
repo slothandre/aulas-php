@@ -27,19 +27,19 @@
                     $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
                 ?>
                     <ul class="list-group">
-                        <li class="list-group-item">Nome do produto: <?=$nome?></li>
+                        <li class="list-group-item"><b>Nome do produto</b>: <span class="badge bg-info text-dark"><?=$nome?></span></li>
                         <?php
                             if(!empty($fabricantes)) { ?>
-                                <li class="list-group-item">Fabricante: <?=$fabricantes?></li>
+                                <li class="list-group-item"><b>Fabricante</b>: <span class="badge bg-info text-dark"><?=$fabricantes?></span></li>
                         <?php } ?>
-                        <li class="list-group-item">Preço: R$<?=number_format($preco, 2, ",", ".")?></li>
+                        <li class="list-group-item"><b>Preço</b>: <span class="badge bg-info text-dark">R$<?=number_format($preco, 2, ",", ".")?></span></li>
                         <?php
                             if(!empty($disponibilidade)) { ?>
-                                <li class="list-group-item">Disponibilidade: <?=$disponibilidade?></li>
+                                <li class="list-group-item"><b>Disponibilidade</b>: <span class="badge bg-info text-dark"><?=$disponibilidade?></span></li>
                         <?php } ?>
                         <?php
                             if(!empty($descricao)) { ?>
-                                <li class="list-group-item">Descrição: <?=$descricao?></li>
+                                <li class="list-group-item"><b>Descrição</b>: <span class="badge bg-info text-dark"><?=$descricao?></span></li>
                         <?php } ?>
                     </ul>
                 <?php
