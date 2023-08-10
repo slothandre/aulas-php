@@ -11,21 +11,45 @@
         <h1 class="display-1 text-center">Visualização de Produtos</h1>
     </header>
     <main>
-        <?php
-            if(empty($_POST["name"]) || empty($_POST["price"])) { ?>
-                <div class="card text-bg-danger">
-                    <div class="card-header">
-                        <h2 class="card-title">Falha grave!!</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">É obrigatorio preencher NOME e PREÇO!!!</p>
-                    </div>
-                </div>
+        <section class="container">
             <?php
-            } else {
-
-            }
-        ?>
+                if(empty($_POST["nome"]) || empty($_POST["preco"])) { ?>
+                    <div class="card text-center border-danger">
+                        <div class="card-header">
+                            <h2 class="card-title">Falha grave!!</h2>
+                        </div>
+                        <div class="card-body text-danger">
+                            <p class="card-text">É <b>obrigatorio</b> preencher <b>NOME</b> e <b>PREÇO</b>!!!</p>
+                        </div>
+                    </div>
+                <?php
+                } else {
+                    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+                    $fabricantes = filter_input(INPUT_POST, "fabricantes", FILTER_SANITIZE_SPECIAL_CHARS);
+                    $preco = filter_input(INPUT_POST, "preco", FILTER_VALIDATE_FLOAT);
+                    $disponibilidade = filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
+                    $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
+                ?>
+                    <ul class="list-group">
+                        <li class="list-group-item">Nome do produto: <?=$nome?></li>
+                        <?php
+                            if(!empty($fabricantes)) { ?>
+                                <li class="list-group-item">Fabricante: <?=$fabricantes?></li>
+                        <?php } ?>
+                        <li class="list-group-item">Preço: R$<?=number_format($preco, 2, ",", ".")?></li>
+                        <?php
+                            if(!empty($disponibilidade)) { ?>
+                                <li class="list-group-item">Disponibilidade: <?=$disponibilidade?></li>
+                        <?php } ?>
+                        <?php
+                            if(!empty($descricao)) { ?>
+                                <li class="list-group-item">Descrição: <?=$descricao?></li>
+                        <?php } ?>
+                    </ul>
+                <?php
+                }
+            ?>
+        </section>
     </main>
     <footer>
 

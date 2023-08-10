@@ -12,10 +12,10 @@
         <h1 class="display-1 text-center">Cadastro de Produtos</h1>
     </header>
     <main>
-        <form action="processamento-form.php" method="post">
+        <form class="container" action="processamento-form.php" method="post">
             <div class="form-floating">
-                <input class="form-control" type="text" name="name" id="name">
-                <label class="form-label" for="name">Nome</label>
+                <input class="form-control" type="text" name="nome" id="nome">
+                <label class="form-label" for="nome">Nome do produto</label>
             </div>
             <div>
                 <select class="form-select" name="fabricantes" id="fabricantes">
@@ -30,16 +30,16 @@
                 </select>
             </div>
             <div class="form-floating">
-                <input class="form-control" type="number" name="price" id="price" min="100" max="10000" step=".01">
+                <input class="form-control" type="number" name="preco" id="price" min="100" max="10000" step=".01">
                 <label for="price">Preço</label>
             </div>
             <div>Disponibilidade
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="sim-nao" id="sim" value="sim">
+                    <input class="form-check-input" type="radio" name="disponibilidade" id="sim" value="Sim">
                     <label class="form-check-label" for="sim">Sim</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="sim-nao" id="nao" value="nao">
+                    <input class="form-check-input" type="radio" name="disponibilidade" id="nao" value="Não">
                     <label class="form-check-label" for="nao">Não</label>
                 </div>
             </div>
